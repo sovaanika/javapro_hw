@@ -36,8 +36,8 @@ public class TestRunner {
                 if (Modifier.isStatic(m.getModifiers())) {
                     throw new RuntimeException("Аннотация Test указана для статического метода!");
                 }
-                if (m.getAnnotation(Test.class).priority() > 10 || m.getAnnotation(Test.class).priority() < 0) {
-                    throw new RuntimeException("Параметр priority для аннотации не в пределах 0-10");
+                if (m.getAnnotation(Test.class).priority() > 10 || m.getAnnotation(Test.class).priority() < 1) {
+                    throw new RuntimeException("Параметр priority для аннотации не в пределах 1-10");
                 }
                 testMethods.add(m);
             }
