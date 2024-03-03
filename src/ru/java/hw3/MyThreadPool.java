@@ -18,8 +18,8 @@ public class MyThreadPool {
     }
 
     public void execute(Runnable task) {
-        if (workers[0] == null || isShutdown) {
-            throw new IllegalStateException("The pool is not initialized or has been shut down.");
+        if (isShutdown) {
+            throw new IllegalStateException("The pool has been shut down.");
         }
         synchronized (taskList) {
             taskList.addLast(task);
